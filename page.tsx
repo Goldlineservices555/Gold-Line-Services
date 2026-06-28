@@ -1,1 +1,163 @@
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f7f9fc;color:#102033}.container{width:min(1180px,92%);margin:auto}.topbar{background:#07111f;color:#dbeafe;font-size:14px}.topbar .container{height:38px;display:flex;align-items:center;justify-content:space-between}.header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid #e5e7eb}.nav{height:88px;display:flex;align-items:center;justify-content:space-between}.brand img{height:64px;width:auto}.menu{display:flex;gap:26px}.menu a{text-decoration:none;color:#07111f;font-weight:800}.cta{background:linear-gradient(135deg,#f6c24b,#d69922);color:#07111f;padding:13px 22px;border-radius:999px;text-decoration:none;font-weight:900}.hero{background:linear-gradient(135deg,rgba(7,17,31,.98),rgba(9,48,91,.95));color:white;padding:105px 0;position:relative;overflow:hidden}.hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px);background-size:48px 48px}.hero-grid{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}.badge{display:inline-block;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);padding:9px 14px;border-radius:999px;font-weight:800}.hero h1{font-size:clamp(44px,6vw,76px);line-height:1.02;margin:18px 0}.lead{font-size:21px;color:#dbeafe;max-width:720px}.actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}.btn{display:inline-flex;align-items:center;justify-content:center;padding:15px 24px;border-radius:999px;text-decoration:none;font-weight:900}.btn.primary{background:linear-gradient(135deg,#f6c24b,#d69922);color:#07111f}.btn.secondary{border:2px solid rgba(255,255,255,.7);color:white}.trust{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}.trust div{display:flex;gap:8px;align-items:center;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);padding:12px 14px;border-radius:14px;font-weight:800}.hero-photo{position:relative}.hero-photo img{width:100%;height:560px;object-fit:cover;border-radius:36px;box-shadow:0 30px 80px rgba(0,0,0,.35)}.photo-card{position:absolute;left:24px;bottom:24px;background:white;color:#07111f;border-radius:22px;padding:20px 24px;box-shadow:0 20px 55px rgba(0,0,0,.25)}.photo-card strong{display:block;font-size:22px}.photo-card span{color:#667085}.section{padding:90px 0}.eyebrow{color:#0877d9;text-transform:uppercase;letter-spacing:1.5px;font-weight:900;font-size:13px}.section h2{font-size:clamp(34px,4vw,52px);line-height:1.12;margin:0 0 18px;color:#07111f}.services{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.card{background:white;border:1px solid #e5e7eb;border-radius:28px;padding:30px;box-shadow:0 14px 36px rgba(7,17,31,.06)}.card .icon{width:42px;height:42px;color:#0877d9}.card h3{font-size:23px}.card p{color:#667085}.about{background:white}.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}.about-grid img{width:100%;height:520px;object-fit:cover;border-radius:34px;box-shadow:0 24px 70px rgba(7,17,31,.14)}.about-grid p,.note{color:#667085;font-size:18px}.about-grid li{margin:10px 0;font-weight:800}.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.gallery img{width:100%;height:300px;object-fit:cover;border-radius:26px;box-shadow:0 14px 36px rgba(7,17,31,.1)}.dark{background:linear-gradient(135deg,#07111f,#12345d);color:white}.dark h2{color:white}.process{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px}.steps{display:grid;gap:18px}.step{display:flex;gap:18px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16);border-radius:22px;padding:22px}.step span{width:42px;height:42px;background:#f6c24b;color:#07111f;border-radius:50%;display:grid;place-items:center;font-weight:900;flex:0 0 auto}.contact{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px}.form{display:grid;gap:15px;background:white;border:1px solid #e5e7eb;border-radius:30px;padding:34px;box-shadow:0 24px 70px rgba(7,17,31,.12)}input,select,textarea{padding:16px;border:1px solid #d1d5db;border-radius:15px;font-size:16px}textarea{min-height:140px}button{border:0;border-radius:999px;background:#07111f;color:white;font-size:16px;font-weight:900;padding:17px}.info{background:white;border:1px solid #e5e7eb;border-radius:28px;padding:28px}.info a{color:#0877d9;font-weight:900}.footer{background:#07111f;color:white;padding:34px 0}.footer .container{display:flex;justify-content:space-between;gap:30px;align-items:center}.footer img{height:74px;width:auto;background:white;border-radius:14px}.footer p{color:#cbd5e1;text-align:right}.footer a{color:#cbd5e1}@media(max-width:900px){.menu,.header .cta{display:none}.topbar .container{justify-content:center}.topbar span:last-child{display:none}.brand img{height:54px}.hero{padding:70px 0}.hero-grid,.services,.about-grid,.gallery,.process,.contact{grid-template-columns:1fr}.hero-photo img{height:380px}.footer .container{flex-direction:column;align-items:flex-start}.footer p{text-align:left}}
+import Image from "next/image";
+import { Flame, Snowflake, Home, Zap, Thermometer, FileText, ShieldCheck, Clock, MapPin } from "lucide-react";
+
+const services = [
+  ["Furnace & Heating", "Furnace diagnostics, blower motors, ignition issues, controls, and airflow.", Flame],
+  ["AC Repair", "Condenser, evaporator coil, refrigerant line, drain, and airflow diagnostics.", Snowflake],
+  ["Appliance Repair", "Major home appliance diagnostics, motors, controls, and electrical faults.", Home],
+  ["Electrical Troubleshooting", "Breakers, wiring, motors, low-voltage controls, and HVAC electrical faults.", Zap],
+  ["Heat Pump Service", "Heating/cooling performance checks, controls, airflow, and operation issues.", Thermometer],
+  ["Insurance Reports", "Clear technical descriptions and repair scope for HVAC-related issues.", FileText],
+];
+
+const photos = [
+  ["https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=900&q=80", "HVAC technician"],
+  ["https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=900&q=80", "Tools"],
+  ["https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=80", "Home service"],
+];
+
+export default function HomePage() {
+  return (
+    <>
+      <div className="topbar">
+        <div className="container">
+          <span>HVAC • Heating • Cooling • Appliance Repair</span>
+          <span>Chicago & Surrounding Suburbs</span>
+        </div>
+      </div>
+
+      <header className="header">
+        <div className="container nav">
+          <a className="brand" href="#"><Image src="/logo.png" width={230} height={90} alt="Gold Line Services logo" /></a>
+          <nav className="menu">
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact</a>
+          </nav>
+          <a className="cta" href="#contact">Request Service</a>
+        </div>
+      </header>
+
+      <main>
+        <section className="hero">
+          <div className="container hero-grid">
+            <div>
+              <p className="badge">Local HVAC & appliance service</p>
+              <h1>Heating, Cooling & Appliance Repair in Chicago.</h1>
+              <p className="lead">Professional diagnostics, repair, and installation support for residential HVAC systems and major home appliances.</p>
+              <div className="actions">
+                <a className="btn primary" href="#contact">Request Service</a>
+                <a className="btn secondary" href="#services">View Services</a>
+              </div>
+              <div className="trust">
+                <div><ShieldCheck /> Insured service</div>
+                <div><Clock /> Fast scheduling</div>
+                <div><MapPin /> Chicago area</div>
+              </div>
+            </div>
+
+            <div className="hero-photo">
+              <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1100&q=80" alt="HVAC technician" />
+              <div className="photo-card">
+                <strong>Service Request</strong>
+                <span>AC • Furnace • Appliance • Electrical</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="services" className="section">
+          <div className="container">
+            <p className="eyebrow">Services</p>
+            <h2>Professional HVAC & Appliance Service</h2>
+            <div className="services">
+              {services.map(([title, text, Icon]: any) => (
+                <div className="card" key={title}>
+                  <Icon className="icon" />
+                  <h3>{title}</h3>
+                  <p>{text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="about" className="section about">
+          <div className="container about-grid">
+            <div>
+              <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1100&q=80" alt="Service tools" />
+            </div>
+            <div>
+              <p className="eyebrow">About Gold Line Services</p>
+              <h2>Clear diagnostics. Honest repair. Reliable result.</h2>
+              <p>Gold Line Services provides practical field-focused HVAC and appliance repair for homeowners and small properties in the Chicago area.</p>
+              <ul>
+                <li>Heating and cooling diagnostics</li>
+                <li>Electrical troubleshooting</li>
+                <li>Repair documentation when needed</li>
+                <li>Residential and small property service</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="gallery" className="section">
+          <div className="container">
+            <p className="eyebrow">Gallery</p>
+            <h2>Service photo placeholders</h2>
+            <p className="note">These stock images can be replaced later with your real job photos.</p>
+            <div className="gallery">
+              {photos.map(([src, alt]) => <img key={src} src={src} alt={alt} />)}
+            </div>
+          </div>
+        </section>
+
+        <section className="section dark">
+          <div className="container process">
+            <div>
+              <p className="eyebrow">Process</p>
+              <h2>Simple service process</h2>
+              <p className="lead">Clear diagnostics, repair options, and practical next steps.</p>
+            </div>
+            <div className="steps">
+              <div className="step"><span>1</span><div><h3>Request</h3><p>Send the problem description.</p></div></div>
+              <div className="step"><span>2</span><div><h3>Diagnostics</h3><p>System inspection and cause verification.</p></div></div>
+              <div className="step"><span>3</span><div><h3>Repair scope</h3><p>Clear repair plan and required parts.</p></div></div>
+              <div className="step"><span>4</span><div><h3>Service</h3><p>Repair, startup check, and documentation.</p></div></div>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" className="section">
+          <div className="container contact">
+            <div>
+              <p className="eyebrow">Contact</p>
+              <h2>Request Service</h2>
+              <div className="info">
+                <p><strong>Email:</strong><br/><a href="mailto:goldlineservices555@gmail.com">goldlineservices555@gmail.com</a></p>
+                <p><strong>Phone:</strong><br/>Will be added later</p>
+                <p><strong>Service Area:</strong><br/>Chicago and surrounding suburbs</p>
+              </div>
+            </div>
+            <form className="form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+              <input name="name" placeholder="Your name" />
+              <input name="email" placeholder="Email address" />
+              <input name="city" placeholder="City / ZIP code" />
+              <select name="service"><option>Service needed</option><option>Furnace / Heating Repair</option><option>AC Repair</option><option>Appliance Repair</option></select>
+              <textarea name="message" placeholder="Describe the problem" />
+              <button type="submit">Send Request</button>
+            </form>
+          </div>
+        </section>
+      </main>
+
+      <footer className="footer">
+        <div className="container">
+          <Image src="/logo.png" width={230} height={90} alt="Gold Line Services logo" />
+          <div><strong>Gold Line Services</strong><p>HVAC & Appliance Repair • Chicago Area</p><p><a href="mailto:goldlineservices555@gmail.com">goldlineservices555@gmail.com</a></p></div>
+        </div>
+      </footer>
+    </>
+  );
+}
